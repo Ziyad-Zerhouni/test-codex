@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseNet - Social Media App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>PulseNet</h1>
+      <nav>
+        <button class="tab-btn active" data-tab="feed">Feed</button>
+        <button class="tab-btn" data-tab="explore">Explore</button>
+        <button class="tab-btn" data-tab="messages">Messages</button>
+        <button class="tab-btn" data-tab="notifications">Notifications</button>
+        <button class="tab-btn" data-tab="profile">Profile</button>
+      </nav>
+      <div class="topbar-actions">
+        <a class="github-link" href="https://github.com/your-username/pulsenet" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <button id="themeToggle">🌙</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <aside class="left-panel card">
+        <section>
+          <h3>Auth</h3>
+          <div class="auth-row">
+            <input id="usernameInput" placeholder="username" />
+            <button id="loginBtn">Login / Register</button>
+          </div>
+          <p id="authStatus"></p>
+        </section>
+
+        <section>
+          <h3>Create Story</h3>
+          <input id="storyInput" placeholder="Share a short story update..." />
+          <button id="addStoryBtn">Post Story</button>
+          <div id="storiesList"></div>
+        </section>
+
+        <section>
+          <h3>Trending Tags</h3>
+          <ul id="trendingList"></ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <div id="feed" class="tab active card">
+          <h2>Create Post</h2>
+          <textarea id="postText" placeholder="What's happening?"></textarea>
+          <input id="imageUrl" placeholder="Optional image URL" />
+          <input id="postTags" placeholder="Tags (comma-separated) e.g. coding,tech" />
+          <button id="postBtn">Post</button>
+          <h2>Timeline</h2>
+          <div id="feedList"></div>
+        </div>
+
+        <div id="explore" class="tab card">
+          <h2>Explore</h2>
+          <input id="searchInput" placeholder="Search posts or users..." />
+          <div id="exploreResults"></div>
+        </div>
+
+        <div id="messages" class="tab card">
+          <h2>Direct Messages</h2>
+          <div class="dm-controls">
+            <input id="dmTo" placeholder="Send message to user" />
+            <input id="dmBody" placeholder="Type message" />
+            <button id="sendDmBtn">Send</button>
+          </div>
+          <div id="dmList"></div>
+        </div>
+
+        <div id="notifications" class="tab card">
+          <h2>Notifications</h2>
+          <div id="notificationsList"></div>
+        </div>
+
+        <div id="profile" class="tab card">
+          <h2>Profile</h2>
+          <input id="bioInput" placeholder="Update bio" />
+          <button id="saveBioBtn">Save Bio</button>
+          <div id="profileView"></div>
+        </div>
+      </section>
+
+      <aside class="right-panel card">
+        <h3>People</h3>
+        <div id="peopleList"></div>
+
+        <h3>Bookmarks</h3>
+        <div id="bookmarksList"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
